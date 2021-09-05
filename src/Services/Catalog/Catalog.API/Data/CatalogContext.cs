@@ -21,7 +21,7 @@ namespace Catalog.API.Data
             var client = new MongoClient(_databaseSettings.Value.ConnectionString);
             var database = client.GetDatabase(_databaseSettings.Value.DatabaseName);
             this.Products = database.GetCollection<Product>(_databaseSettings.Value.CollectionName);
-
+            CatalogDataSeed.Seed(this.Products);
         }
         /// <inheritdoc />
         public IMongoCollection<Product> Products { get; }
