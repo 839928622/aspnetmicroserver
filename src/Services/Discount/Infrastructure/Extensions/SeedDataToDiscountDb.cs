@@ -1,6 +1,6 @@
 ﻿using System;
 using Dapper;
-using Discount.API.Entities;
+using Infrastructure.Entities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 using Npgsql;
 using Polly;
 
-namespace Discount.API.Extensions
+namespace Infrastructure.Extensions
 {
     public static  class SeedDataToDiscountDb
     {
@@ -50,7 +50,7 @@ namespace Discount.API.Extensions
 
         private static void ExecuteMigrations(IConfiguration configuration)
         {
-            using var connection = new NpgsqlConnection(configuration.GetValue<string>("ConnectionStrings:PostgreSQL"));
+            using var connection = new NpgsqlConnection(configuration["ConnectionStrings:PostgreSQL"]);
             connection.Open();
 
             using var command = new NpgsqlCommand

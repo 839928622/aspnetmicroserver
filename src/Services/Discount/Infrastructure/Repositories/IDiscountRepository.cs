@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
-using Discount.API.Entities;
+using Infrastructure.Entities;
 
-namespace Discount.API.Repositories
+namespace Infrastructure.Repositories
 {
-   public interface IDiscountRepository
+    public interface IDiscountRepository
     {
         Task<Coupon> GetDiscount(string productName);
 
