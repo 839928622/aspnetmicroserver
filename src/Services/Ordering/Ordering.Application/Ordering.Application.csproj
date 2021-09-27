@@ -11,9 +11,27 @@
   <ItemGroup>
     <Folder Include="Behaviours\" />
     <Folder Include="Features\Orders\Commands\" />
+    <Folder Include="MapperCodeGen\" />
+    <Folder Include="Mapper\" />
   </ItemGroup>
 
+
+  <Target Name="Mapster" AfterTargets="AfterBuild">
+    <Exec WorkingDirectory="$(ProjectDir)" Command="dotnet tool restore" />
+    <Exec WorkingDirectory="$(ProjectDir)" Command="dotnet mapster model -a &quot;$(TargetDir)$(ProjectName).dll&quot; -o MapperCodeGen -n Ordering.Application.MapperCodeGen" />
+    <Exec WorkingDirectory="$(ProjectDir)" Command="dotnet mapster extension -a &quot;$(TargetDir)$(ProjectName).dll&quot; -o Mapper -n Ordering.Application.Mapper" />
+    <Exec WorkingDirectory="$(ProjectDir)" Command="dotnet mapster mapper -a &quot;$(TargetDir)$(ProjectName).dll&quot; " />
+  </Target>
+
   <ItemGroup>
+    <Generated Include="**\*.g.cs" />
+  </ItemGroup>
+  <Target Name="CleanGenerated">
+    <Delete Files="@(Generated)" />
+  </Target>
+
+  <ItemGroup>
+    <PackageReference Include="Mapster" Version="7.2.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
   </ItemGroup>
 

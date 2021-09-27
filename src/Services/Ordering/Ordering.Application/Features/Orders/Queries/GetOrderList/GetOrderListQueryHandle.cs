@@ -1,20 +1,27 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Mapster;
 using MediatR;
+using Ordering.Application.Contracts.Persistence;
 
 namespace Ordering.Application.Features.Orders.Queries.GetOrderList
 {
     public class GetOrderListQueryHandle : IRequestHandler<GetOrderListQuery, List<OrdersDTO>>
     {
-        public GetOrderListQueryHandle()
+        private readonly IOrderRepository _orderRepository;
+
+        public GetOrderListQueryHandle(IOrderRepository orderRepository)
         {
-            
+            _orderRepository = orderRepository;
         }
-        public Task<List<OrdersDTO>> Handle(GetOrderListQuery request, 
+        public async Task<List<OrdersDTO>> Handle(GetOrderListQuery request, 
              CancellationToken cancellationToken)
         {
-            throw new System.NotImplementedException();
+            var orderList = await _orderRepository.GetOrdersByUserName(request.UserName);
+            return orderList.Adapt<List<OrdersDTO>>();
+            
         }
     }
 }
