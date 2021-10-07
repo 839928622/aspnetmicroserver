@@ -25,7 +25,7 @@ namespace Ordering.Application.Features.Orders.Commands.UpdateOrder
             if (orderToUpdate == null)
             {
                 _logger.LogError($"Order ({request.Id}) you are updating is currently not exist on database");
-                throw new ArgumentNullException(nameof(orderToUpdate));
+                throw new NullReferenceException($"Order ({request.Id}) you are updating is currently not exist on database");
             }
 
             request.Adapt(orderToUpdate);

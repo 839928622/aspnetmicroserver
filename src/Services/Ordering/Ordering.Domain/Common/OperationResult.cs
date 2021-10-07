@@ -81,7 +81,7 @@ namespace Ordering.Domain.Common
         /// <summary>
         ///     消息
         /// </summary>
-        protected string Msg { get; set; }
+        public string Msg { get; set; }
 
 
         protected T Data { get; set; }
