@@ -11,9 +11,9 @@ namespace Ordering.Application.Features.Orders.Commands.UpdateOrder
     public class UpdateOrderCommandHandle : IRequestHandler<UpdateOrderCommand>
     {
         private readonly IOrderRepository _orderRepository;
-        private readonly Logger<UpdateOrderCommandHandle> _logger;
+        private readonly ILogger<UpdateOrderCommandHandle> _logger;
 
-        public UpdateOrderCommandHandle(IOrderRepository orderRepository,Logger<UpdateOrderCommandHandle> logger)
+        public UpdateOrderCommandHandle(IOrderRepository orderRepository,ILogger<UpdateOrderCommandHandle> logger)
         {
             _orderRepository = orderRepository ?? throw new ArgumentNullException(nameof(orderRepository));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
