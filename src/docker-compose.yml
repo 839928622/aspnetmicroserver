@@ -9,7 +9,10 @@ services:
 
   discountdb:
     image: postgres
-  
+
+  orderdb:
+    image: mcr.microsoft.com/mssql/server
+
   portainer:
     image: portainer/portainer-ce
 
@@ -41,6 +44,7 @@ volumes:
   mongo_data:
   portainer_data:
   postgres_data:
+  orderdb_data:
 
 
 

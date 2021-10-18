@@ -26,7 +26,19 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data/
-  
+
+  orderdb:
+    container_name: orderdb
+    environment:
+      - SA_PASSWORD="yourStrong(!)Password"
+      - ACCEPT_EULA="Y"
+    restart: always
+    ports:
+      - "1433:1433"
+    volumes:
+      - orderdb_data:/var/opt/mssql/
+
+
   portainer:
     container_name: portainer
     restart: always
