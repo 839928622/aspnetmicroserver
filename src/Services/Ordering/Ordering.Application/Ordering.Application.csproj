@@ -14,7 +14,7 @@
   </ItemGroup>
 
 
-  <Target Name="Mapster" AfterTargets="AfterBuild">
+  <!--<Target Name="Mapster" AfterTargets="AfterBuild">
     <Exec WorkingDirectory="$(ProjectDir)" Command="dotnet tool restore" />
     <Exec WorkingDirectory="$(ProjectDir)" Command="dotnet mapster model -a &quot;$(TargetDir)$(ProjectName).dll&quot; -o MapperCodeGen -n Ordering.Application.MapperCodeGen" />
     <Exec WorkingDirectory="$(ProjectDir)" Command="dotnet mapster extension -a &quot;$(TargetDir)$(ProjectName).dll&quot; -o Mapper -n Ordering.Application.Mapper" />
@@ -26,7 +26,7 @@
   </ItemGroup>
   <Target Name="CleanGenerated">
     <Delete Files="@(Generated)" />
-  </Target>
+  </Target>-->
 
   <ItemGroup>
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.3.3" />

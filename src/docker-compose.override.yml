@@ -30,8 +30,9 @@ services:
   orderdb:
     container_name: orderdb
     environment:
-      - SA_PASSWORD="yourStrong(!)Password"
-      - ACCEPT_EULA="Y"
+    #do not use double quotes , if u use it , it will consider it as part of sa password
+      - SA_PASSWORD=yourStrong(!)Password
+      - ACCEPT_EULA=Y
     restart: always
     ports:
       - "1433:1433"
@@ -99,7 +100,7 @@ services:
     container_name: ordering.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__OrderingConnectionString=Server=orderdb;Database=OrderDb;User Id=sa;Password=yourStrong(!)Password
+      - "ConnectionStrings__OrderingConnectionString=Server=orderdb;Database=OrderDb;User Id=sa;Password=yourStrong(!)Password"
     depends_on:
       - orderdb
     ports:
