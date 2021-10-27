@@ -49,7 +49,8 @@ namespace Basket.API.Controllers
 
 
             var createdBasket=  await _basketRepository.UpdateBasket(basket);
-            return CreatedAtAction(nameof(GetBasket), createdBasket.UserName);
+            // will lead to some issues: https://stackoverflow.com/questions/56234695/why-nameof-doesnt-work-with-the-creationataction-return-statement
+            return CreatedAtRoute(nameof(GetBasket) ,new {userName = createdBasket.UserName},createdBasket);
         }
 
 
