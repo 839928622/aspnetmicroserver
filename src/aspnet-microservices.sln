@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31205.134
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{8AFD6BF3-792E-4FE4-8316-0B649BDC2938}"
 EndProject
@@ -35,11 +35,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.Infrastructure", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{00564325-8DD1-45A7-B752-7368A3612B7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus.Messages", "BuildingBlocks\EventBus.Messages\EventBus.Messages.csproj", "{D8EA1D74-8288-4AF3-B41A-22002657F962}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus.Messages", "BuildingBlocks\EventBus.Messages\EventBus.Messages.csproj", "{D8EA1D74-8288-4AF3-B41A-22002657F962}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{41086597-CA4E-411E-A5A4-D14A3C09CBC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OcelotApiGateway", "ApiGateways\OcelotApiGateway\OcelotApiGateway.csproj", "{FFF67DED-1929-4E26-907A-207BC435E24C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OcelotApiGateway", "ApiGateways\OcelotApiGateway\OcelotApiGateway.csproj", "{FFF67DED-1929-4E26-907A-207BC435E24C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopping.Aggregator", "ApiGateways\Shopping.Aggregator\Shopping.Aggregator.csproj", "{ECC404C0-065F-4FE4-93C6-12C69FEB6954}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,6 +97,10 @@ Global
 		{FFF67DED-1929-4E26-907A-207BC435E24C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFF67DED-1929-4E26-907A-207BC435E24C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFF67DED-1929-4E26-907A-207BC435E24C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECC404C0-065F-4FE4-93C6-12C69FEB6954}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECC404C0-065F-4FE4-93C6-12C69FEB6954}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECC404C0-065F-4FE4-93C6-12C69FEB6954}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECC404C0-065F-4FE4-93C6-12C69FEB6954}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +121,7 @@ Global
 		{4777A277-12FA-4D22-B038-D38051E7954B} = {0D5F34A1-13FD-43B2-BC7E-DC26A1A4C877}
 		{D8EA1D74-8288-4AF3-B41A-22002657F962} = {00564325-8DD1-45A7-B752-7368A3612B7A}
 		{FFF67DED-1929-4E26-907A-207BC435E24C} = {41086597-CA4E-411E-A5A4-D14A3C09CBC6}
+		{ECC404C0-065F-4FE4-93C6-12C69FEB6954} = {41086597-CA4E-411E-A5A4-D14A3C09CBC6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {353F4653-C772-4E23-9044-1BF1E009FA92}
